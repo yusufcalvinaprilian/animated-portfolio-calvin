@@ -43,7 +43,7 @@ const Navbar: React.FC<NavbarProps> = ({
 	],
 	ctaText = "Download CV",
 	onCtaClick,
-	resumeUrl = "https://drive.google.com/uc?export=download&id=1CCLKRKX0gOyqNzlIwJTO2rVL4F1lrnXZ",
+	resumeUrl = "https://drive.google.com/uc?export=download&id=1DoPq3_S3o9muM7ELol9xnFU1H17JU_DJ",
 }) => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

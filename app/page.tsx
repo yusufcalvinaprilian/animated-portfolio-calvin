@@ -12,8 +12,8 @@ import TechIcon from "./components/TechIcon";
 export default function Page() {
 	const handleDownloadCV = () => {
 		console.log("handleDownloadCV called");
-		// File ID: 1CCLKRKX0gOyqNzlIwJTO2rVL4F1lrnXZ
-		const resumeUrl = "https://drive.google.com/uc?export=download&id=1CCLKRKX0gOyqNzlIwJTO2rVL4F1lrnXZ";
+		// File ID: 1DoPq3_S3o9muM7ELol9xnFU1H17JU_DJ
+		const resumeUrl = "https://drive.google.com/uc?export=download&id=1DoPq3_S3o9muM7ELol9xnFU1H17JU_DJ";
 		console.log("Opening URL:", resumeUrl);
 		window.open(resumeUrl, "_blank");
 	};
@@ -30,7 +30,7 @@ export default function Page() {
 			<Navbar
 				logo={{ initials: "CA", text: "CalvinAprilian" }}
 				onCtaClick={handleDownloadCV}
-				resumeUrl="https://drive.google.com/uc?export=download&id=1CCLKRKX0gOyqNzlIwJTO2rVL4F1lrnXZ"
+				resumeUrl="https://drive.google.com/uc?export=download&id=1DoPq3_S3o9muM7ELol9xnFU1H17JU_DJ"
 				navItems={[
 					{ href: "/", label: "Home" },
 					{ href: "/about", label: "About" },

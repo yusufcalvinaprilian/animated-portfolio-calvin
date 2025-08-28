@@ -40,7 +40,7 @@ Comprehensive update summary of all changes made to the animated portfolio befor
 ### 2. **Resume Download Integration** 📄
 
 - **Platform**: Google Drive integration
-- **File ID**: `1CCLKRKX0gOyqNzlIwJTO2rVL4F1lrnXZ`
+- **File ID**: `1DoPq3_S3o9muM7ELol9xnFU1H17JU_DJ`
 - **Implementation**: Direct download via CTA buttons
 - **Status**: ✅ Working perfectly
 
