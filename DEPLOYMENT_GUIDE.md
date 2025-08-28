@@ -12,22 +12,26 @@ Panduan lengkap untuk mendeploy portfolio website ke GitHub dan Vercel.
 ## 🔧 Setup Local Development
 
 ### 1. Clone Repository
+
 ```bash
 git clone https://github.com/yusufcalvinaprilian/animated-portfolio-calvin.git
 cd animated-portfolio-calvin
 ```
 
 ### 2. Install Dependencies
+
 ```bash
 npm install
 ```
 
 ### 3. Run Development Server
+
 ```bash
 npm run dev
 ```
 
 ### 4. Build untuk Production
+
 ```bash
 npm run build
 ```
@@ -35,6 +39,7 @@ npm run build
 ## 🌐 GitHub Setup
 
 ### 1. Buat Repository Baru
+
 1. Buka [GitHub.com](https://github.com)
 2. Klik tombol "+" → "New repository"
 3. Isi informasi:
@@ -45,6 +50,7 @@ npm run build
 4. Klik "Create repository"
 
 ### 2. Push Code ke GitHub
+
 ```bash
 # Jika belum ada git repository
 git init
@@ -62,11 +68,13 @@ git push -u origin main
 ## 🚀 Vercel Deployment
 
 ### 1. Setup Vercel
+
 1. Buka [Vercel.com](https://vercel.com)
 2. Sign in dengan GitHub
 3. Klik "New Project"
 
 ### 2. Import Repository
+
 1. Pilih repository `animated-portfolio`
 2. Klik "Import"
 3. Konfigurasi:
@@ -80,15 +88,18 @@ git push -u origin main
 ### 3. Konfigurasi Lanjutan
 
 #### Environment Variables
+
 Untuk project ini tidak diperlukan environment variables.
 
 #### Custom Domain
+
 1. Di dashboard Vercel, pilih project
 2. Klik "Settings" → "Domains"
 3. Tambahkan domain custom Anda
 4. Ikuti instruksi DNS setup
 
 #### Analytics
+
 1. Klik "Settings" → "Analytics"
 2. Aktifkan Vercel Analytics
 3. Tambahkan tracking code jika diperlukan
@@ -96,11 +107,13 @@ Untuk project ini tidak diperlukan environment variables.
 ## 📊 Monitoring & Maintenance
 
 ### 1. Performance Monitoring
+
 - **Vercel Analytics**: Track user behavior
 - **Core Web Vitals**: Monitor performance metrics
 - **Error Tracking**: Monitor runtime errors
 
 ### 2. Regular Updates
+
 ```bash
 # Update dependencies
 npm update
@@ -115,6 +128,7 @@ git push origin main
 ```
 
 ### 3. Backup Strategy
+
 - **GitHub**: Code backup otomatis
 - **Vercel**: Deployment history tersimpan
 - **Local**: Simpan backup lokal
@@ -124,6 +138,7 @@ git push origin main
 ### Common Issues
 
 #### 1. Build Failures
+
 ```bash
 # Clear cache
 rm -rf .next
@@ -133,11 +148,13 @@ npm run build
 ```
 
 #### 2. Deployment Issues
+
 - Periksa build logs di Vercel dashboard
 - Pastikan semua dependencies terinstall
 - Cek TypeScript errors
 
 #### 3. Performance Issues
+
 - Optimize images
 - Enable compression
 - Use CDN untuk static assets
@@ -156,11 +173,13 @@ npm run build
 ## 🔄 Continuous Deployment
 
 ### Automatic Deployments
+
 - Setiap push ke `main` branch akan auto-deploy
 - Preview deployments untuk pull requests
 - Rollback ke deployment sebelumnya jika ada masalah
 
 ### Manual Deployments
+
 ```bash
 # Deploy dari local
 vercel
@@ -180,6 +199,7 @@ Jika ada masalah dengan deployment:
 ## 🎉 Success!
 
 Setelah deployment berhasil, website Anda akan tersedia di:
+
 - **Vercel URL**: `https://your-project.vercel.app`
 - **Custom Domain**: `https://yourdomain.com` (jika dikonfigurasi)
 

@@ -20,6 +20,7 @@ interface NavbarProps {
 	navItems?: NavItem[];
 	ctaText?: string;
 	onCtaClick?: () => void;
+	resumeUrl?: string;
 }
 
 const Navbar: React.FC<NavbarProps> = ({
@@ -42,6 +43,7 @@ const Navbar: React.FC<NavbarProps> = ({
 	],
 	ctaText = "Download CV",
 	onCtaClick,
+	resumeUrl = "https://drive.google.com/uc?export=download&id=1CCLKRKX0gOyqNzlIwJTO2rVL4F1lrnXZ",
 }) => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -94,6 +96,19 @@ const Navbar: React.FC<NavbarProps> = ({
 		}
 	};
 
+	// Handle resume download
+	const handleResumeDownload = () => {
+		console.log("Download button clicked!");
+		if (onCtaClick) {
+			console.log("Using onCtaClick function");
+			onCtaClick();
+		} else {
+			console.log("Opening resume URL directly:", resumeUrl);
+			// Open resume in new tab
+			window.open(resumeUrl, "_blank");
+		}
+	};
+
 	// Close mobile menu when pathname changes
 	useEffect(() => {
 		setIsMobileMenuOpen(false);
@@ -142,7 +157,7 @@ const Navbar: React.FC<NavbarProps> = ({
 						{/* Logo */}
 						<Link href="/" className="flex items-center space-x-3 group cursor-pointer">
 							<motion.div
-								className="relative w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-600 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
+								className="relative w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-600 to-sky-300 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
 								whileHover={{ rotate: 5 }}
 								whileTap={{ scale: 0.95 }}
 							>
@@ -250,7 +265,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
 							{/* CTA Button */}
 							<motion.button
-								onClick={onCtaClick}
+								onClick={handleResumeDownload}
 								className="relative px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 font-poppins group"
 								whileHover={{ y: -2, scale: 1.02 }}
 								whileTap={{ scale: 0.95 }}
@@ -373,7 +388,7 @@ const Navbar: React.FC<NavbarProps> = ({
 										<motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.3 }} className="pt-4 border-t border-gray-200 dark:border-gray-700">
 											<motion.button
 												onClick={() => {
-													onCtaClick?.();
+													handleResumeDownload();
 													setIsMobileMenuOpen(false);
 												}}
 												className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg transition-all duration-200 font-poppins flex items-center justify-center space-x-2"
