@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download, Mail, Github, Linkedin } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutPage() {
 	const handleDownloadCV = () => {
@@ -40,8 +41,8 @@ export default function AboutPage() {
 					<div className="grid lg:grid-cols-2 gap-16 items-center">
 						{/* Profile Image */}
 						<motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="relative">
-							<div className="w-full h-96 bg-gradient-to-br from-blue-500/20 to-emerald-500/20 rounded-2xl border border-blue-200 backdrop-blur-sm flex items-center justify-center">
-								<span className="text-gray-600 text-lg">Profile Image</span>
+							<div className="relative w-full h-96 rounded-2xl border border-blue-200 backdrop-blur-sm overflow-hidden">
+								<Image src="/images/profile/calvin-img-prl.png" alt="Yusuf Calvin Aprilian" fill priority sizes="(max-width: 1024px) 100vw, 50vw" className="object-contain object-center rounded-2xl" />
 							</div>
 							<div className="absolute -top-4 -right-4 w-20 h-20 bg-blue-500/20 rounded-full blur-xl"></div>
 							<div className="absolute -bottom-4 -left-4 w-16 h-16 bg-emerald-500/20 rounded-full blur-xl"></div>
@@ -59,18 +60,6 @@ export default function AboutPage() {
 								but comprehensive digital experiences. I thrive on solving complex problems and collaborating with talented individuals. This portfolio is a glimpse into my progress and my unwavering commitment to becoming a better
 								developer every day.
 							</p>
-
-							{/* Stats */}
-							{/* <div className="grid grid-cols-2 gap-6 pt-6">
-								<div className="text-center p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg">
-									<div className="text-3xl font-bold text-blue-600 dark:text-blue-400">3+</div>
-									<div className="text-gray-600 dark:text-gray-300 text-sm">Years Experience</div>
-								</div>
-								<div className="text-center p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg">
-									<div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">50+</div>
-									<div className="text-gray-600 dark:text-gray-300 text-sm">Projects Completed</div>
-								</div>
-							</div> */}
 						</motion.div>
 					</div>
 				</div>
@@ -212,7 +201,7 @@ export default function AboutPage() {
 									"Conducted deployment, testing, and performance optimization for online publication",
 								],
 								technologies: ["TypeScript", "React", "Next JS", "Tailwind CSS", "Git", "Figma"],
-								year: "2020",
+								year: "2024",
 							},
 						].map((experience, index) => (
 							<motion.div

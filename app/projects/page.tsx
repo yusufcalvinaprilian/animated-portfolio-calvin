@@ -5,6 +5,7 @@ import { ArrowRight, ExternalLink, Github, Filter, Lightbulb, Users, TrendingUp,
 import Navbar from "../components/Navbar";
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function ProjectsPage() {
 	const [selectedCategory, setSelectedCategory] = useState("All");
@@ -17,31 +18,28 @@ export default function ProjectsPage() {
 			id: 1,
 			title: "E-Commerce Platform",
 			description: "A modern e-commerce website with React and Node.js, featuring user authentication, product management, and payment integration.",
-			image: "/project1.jpg",
+			image: "/images/project/project.png",
 			tech: ["React", "Node.js", "MongoDB", "Stripe", "Redux"],
 			category: "Full Stack",
 			liveUrl: "#",
-			githubUrl: "#",
 		},
 		{
 			id: 2,
-			title: "Task Management App",
-			description: "Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-			image: "/project2.jpg",
+			title: "Admin Dashboard Panel",
+			description: "A modern and responsive admin dashboard UI built for seamless e-commerce management. Features include a dynamic layout, interactive charts for sales data, and a user-friendly interface for product management.",
+			image: "/images/project/project2.png",
 			tech: ["Next.js", "TypeScript", "Socket.io", "PostgreSQL", "Tailwind CSS"],
 			category: "Full Stack",
-			liveUrl: "#",
-			githubUrl: "#",
+			liveUrl: "admin-panel.vercel.app",
 		},
 		{
 			id: 3,
 			title: "Portfolio Website",
 			description: "Responsive portfolio website with modern animations, smooth scrolling, and interactive elements built with React and Framer Motion.",
-			image: "/project3.jpg",
+			image: "/images/project/project3.png",
 			tech: ["React", "Tailwind CSS", "Framer Motion", "Vercel"],
 			category: "Frontend",
-			liveUrl: "#",
-			githubUrl: "#",
+			liveUrl: "portfolioyusufcalvinaprilian.vercel.app",
 		},
 		{
 			id: 4,
@@ -51,7 +49,6 @@ export default function ProjectsPage() {
 			tech: ["React", "OpenWeather API", "Chart.js", "Geolocation API"],
 			category: "Frontend",
 			liveUrl: "#",
-			githubUrl: "#",
 		},
 		{
 			id: 5,
@@ -61,7 +58,6 @@ export default function ProjectsPage() {
 			tech: ["Next.js", "Markdown", "MongoDB", "NextAuth", "Vercel"],
 			category: "Full Stack",
 			liveUrl: "#",
-			githubUrl: "#",
 		},
 		{
 			id: 6,
@@ -71,7 +67,6 @@ export default function ProjectsPage() {
 			tech: ["React", "D3.js", "Node.js", "Express", "MongoDB"],
 			category: "Frontend",
 			liveUrl: "#",
-			githubUrl: "#",
 		},
 	];
 
@@ -138,18 +133,24 @@ export default function ProjectsPage() {
 								className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-lg transition-all duration-300 overflow-hidden group"
 							>
 								{/* Project Image */}
-								<div className="h-48 bg-gradient-to-br from-blue-500/20 to-emerald-500/20 flex items-center justify-center relative overflow-hidden">
-									<span className="text-gray-600 text-lg">{project.title}</span>
+								<div className="relative overflow-hidden">
+									{project.image ? (
+										<Image src={project.image} alt={project.title} width={1600} height={900} sizes="(max-width: 1024px) 100vw, 33vw" className="w-full h-auto object-contain object-center" />
+									) : (
+										<div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-emerald-500/20 flex items-center justify-center">
+											<span className="text-gray-600 text-lg">{project.title}</span>
+										</div>
+									)}
 									<div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 										<div className="flex gap-4">
-											<motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center gap-2">
-												<ExternalLink className="w-4 h-4" />
-												Live Demo
-											</motion.button>
-											<motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-lg hover:bg-white/30 transition-colors font-medium flex items-center gap-2">
-												<Github className="w-4 h-4" />
-												GitHub
-											</motion.button>
+											{project.liveUrl && (
+												<Link href={project.liveUrl.startsWith("http") ? project.liveUrl : `https://${project.liveUrl}`} target="_blank">
+													<motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center gap-2">
+														<ExternalLink className="w-4 h-4" />
+														Live Demo
+													</motion.button>
+												</Link>
+											)}
 										</div>
 									</div>
 								</div>
